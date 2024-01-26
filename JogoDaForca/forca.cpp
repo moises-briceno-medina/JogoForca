@@ -2,13 +2,10 @@
 #include <string>
 #include <map>
 #include <vector>
-#include <fstream>
-#include <cstdlib>
 #include "letra_existe.hpp"
 #include "imprime_cabecalho.hpp"
 #include "le_arquivo.hpp"
 #include "sorteia_palavra.hpp"
-#include "nao_enforcou.hpp"
 #include "imprime_erros.hpp"
 #include "imprime_palavra.hpp"
 #include "chuta.hpp"
@@ -30,25 +27,25 @@ vector<char> chutes_feitos;
 
 int main() {
 
-	le_arquivo();
-	sorteia_palavra();
-
 	imprime_cabecalho();
 
-	while (nao_acertou() && nao_enforcou()) {
+	palavra_secreta = sorteia_palavra();
 
-		imprime_erros();
+	while (nao_acertou(palavra_secreta, chutou) && chutes_errados.size() < tentativas) {
 
-		imprime_palavra();
+		imprime_erros(chutes_errados);
+
+		imprime_palavra(palavra_secreta, chutou);
 		imprime_tentativas();
 
 
-		chuta();
+		chuta(&chutou, &chutes_errados, &chutes_feitos, &palavra_secreta);
 	}
 
 	cout << "FIM DE JOGO!" << endl;
 	cout << "A palavra secreta era: " << palavra_secreta << endl;
-	if (nao_acertou()) {
+
+	if (nao_acertou(palavra_secreta, chutou)){
 		cout << "Voce perdeu! Tente novamente!" << endl;
 	}
 	else

@@ -27,9 +27,6 @@
     <ClCompile Include="forca.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="imprime_cabecalho.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="imprime_erros.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -48,16 +45,13 @@
     <ClCompile Include="letra_ja_chutada.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="nao_acertou.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="nao_enforcou.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="salva_arquivo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="sorteia_palavra.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nao_acertou.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,16 +86,13 @@
     <ClInclude Include="letra_ja_chutada.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="nao_acertou.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="nao_enforcou.hpp">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="salva_arquivo.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="sorteia_palavra.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="nao_acertou.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
