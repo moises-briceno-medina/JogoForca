@@ -1,2 +1,6 @@
 #pragma once
-bool ehPalavraComposta(std::string palavra_composta);
+#include <string>
+
+namespace JogoForca{
+	bool ehPalavraComposta(std::string& palavra_composta);
+}

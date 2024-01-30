@@ -18,34 +18,34 @@
 
 using namespace std;
 
-int tentativas = 5;
-string palavra_secreta; 
-map<char, bool> chutou;
-vector<char> chutes_errados;
-vector<char> chutes_feitos;
+static int tentativas = 5;
+static string palavra_secreta;
+static map<char, bool> chutou;
+static vector<char> chutes_errados;
+static vector<char> chutes_feitos;
 
 
 int main() {
 
 	imprime_cabecalho();
 
-	palavra_secreta = sorteia_palavra();
+	palavra_secreta = JogoForca::sorteia_palavra();
 
-	while (nao_acertou(palavra_secreta, chutou) && chutes_errados.size() < tentativas) {
+	while (JogoForca::nao_acertou(palavra_secreta, chutou) && chutes_errados.size() < tentativas) {
 
-		imprime_erros(chutes_errados);
+		JogoForca::imprime_erros(chutes_errados);
 
-		imprime_palavra(palavra_secreta, chutou);
-		imprime_tentativas();
+		JogoForca::imprime_palavra(palavra_secreta, chutou);
+		JogoForca::imprime_tentativas(chutes_errados, tentativas);
 
 
-		chuta(&chutou, &chutes_errados, &chutes_feitos, &palavra_secreta);
+		JogoForca::chuta(chutou, chutes_errados, chutes_feitos, palavra_secreta);
 	}
 
 	cout << "FIM DE JOGO!" << endl;
 	cout << "A palavra secreta era: " << palavra_secreta << endl;
 
-	if (nao_acertou(palavra_secreta, chutou)){
+	if (JogoForca::nao_acertou(palavra_secreta, chutou)){
 		cout << "Voce perdeu! Tente novamente!" << endl;
 	}
 	else
@@ -56,7 +56,7 @@ int main() {
 		cin >> resposta;
 		resposta = toupper(resposta);
 		if (resposta == 'S') {
-			adiciona_palavra();
+			JogoForca::adiciona_palavra();
 		}
 	}
 	cin.get();

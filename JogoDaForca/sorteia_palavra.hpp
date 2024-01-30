@@ -1,3 +1,4 @@
 #include <string>
-
-std:: string sorteia_palavra();
+namespace JogoForca {
+	std::string sorteia_palavra();
+}

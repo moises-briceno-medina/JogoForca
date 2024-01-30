@@ -1,1 +1,3 @@
-void adiciona_palavra();
+namespace JogoForca {
+	void adiciona_palavra();
+}

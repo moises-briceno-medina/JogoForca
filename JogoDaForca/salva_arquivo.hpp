@@ -1,4 +1,6 @@
 #include <vector>
 #include <string>
 
-void salva_arquivo(std::vector<std::string> nova_lista);
+namespace JogoForca {
+	void salva_arquivo(std::vector<std::string> nova_lista);
+}

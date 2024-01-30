@@ -1,9 +1,7 @@
-#include <iostream>
-#include <vector>
+#include "imprime_tentativas.hpp"
 
-extern std::vector<char> chutes_errados;
-extern int tentativas;
-void imprime_tentativas() {
+
+void JogoForca:: imprime_tentativas(std::vector<char>& chutes_errados, int& tentativas) {
 
 	std::cout << "Voce tem mais " << tentativas - chutes_errados.size() << " tentativas " << std::endl;
 }

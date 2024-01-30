@@ -1,8 +1,8 @@
 #include"letra_existe.hpp"
 
-bool letra_existe(char chute, std::string* palavra_secreta)
+bool JogoForca:: letra_existe(char chute, std::string& palavra_secreta)
 {
-    for(char letra : (*palavra_secreta)){
+    for(char letra : palavra_secreta){
         if(chute == letra){
             return true;
         }

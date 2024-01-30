@@ -4,7 +4,7 @@
 #include <cstdlib>
 
 
-void salva_arquivo(std::vector<std::string> nova_lista){
+void JogoForca:: salva_arquivo(std::vector<std::string> nova_lista){
     std::ofstream arquivo;
     arquivo.open("palavrasJogoForca.txt");
     if(arquivo.is_open()){

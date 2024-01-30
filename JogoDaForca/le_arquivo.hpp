@@ -2,4 +2,8 @@
 #include <vector>
 #include <string>
 
-std::vector<std::string> le_arquivo();
+namespace JogoForca {
+	std::vector<std::string> le_arquivo();
+
+}
+

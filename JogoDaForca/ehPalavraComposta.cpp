@@ -1,7 +1,6 @@
-#include <string>
+#include "ehPalavraComposta.hpp"
 
-
-bool ehPalavraComposta(std::string palavra_composta) {
+bool JogoForca:: ehPalavraComposta(std::string& palavra_composta) {
 	for (char letra : palavra_composta) {
 		if (letra == ' ' || letra == '-') {
 			return true;
