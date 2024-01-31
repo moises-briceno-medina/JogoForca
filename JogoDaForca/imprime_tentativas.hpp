@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
-#include <vector>
+#include <array>
 
 namespace JogoForca {
-	void imprime_tentativas(std::vector<char>& chutes_errados, int& tentativas);
+	void imprime_tentativas(std::array<char,5>& chutes_errados, int& tentativas);
 }

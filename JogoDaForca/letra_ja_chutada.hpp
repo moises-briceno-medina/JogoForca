@@ -1,6 +1,6 @@
 #pragma once
-#include<vector>
+#include<array>
 
 namespace JogoForca {
-	bool letra_ja_chutada(char letra, std::vector< char>& chutes_feitos);
+	bool letra_ja_chutada(char letra, std::array<char, 30>& chutes_feitos);
 }

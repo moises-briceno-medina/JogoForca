@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include <vector>
+#include <array>
 #include "letra_existe.hpp"
 #include "imprime_cabecalho.hpp"
 #include "le_arquivo.hpp"
@@ -18,11 +18,13 @@
 
 using namespace std;
 
+static int numeros_de_chutes_errados;
+static int numeros_de_chutes_feitos;
 static int tentativas = 5;
 static string palavra_secreta;
 static map<char, bool> chutou;
-static vector<char> chutes_errados;
-static vector<char> chutes_feitos;
+static array<char,5> chutes_errados;
+static array<char,30> chutes_feitos;
 
 
 int main() {
@@ -31,7 +33,7 @@ int main() {
 
 	palavra_secreta = JogoForca::sorteia_palavra();
 
-	while (JogoForca::nao_acertou(palavra_secreta, chutou) && chutes_errados.size() < tentativas) {
+	while (JogoForca::nao_acertou(palavra_secreta, chutou) && chutes_errados.size() == tentativas) {
 
 		JogoForca::imprime_erros(chutes_errados);
 
@@ -39,7 +41,7 @@ int main() {
 		JogoForca::imprime_tentativas(chutes_errados, tentativas);
 
 
-		JogoForca::chuta(chutou, chutes_errados, chutes_feitos, palavra_secreta);
+		JogoForca::chuta(chutou, chutes_errados, chutes_feitos, palavra_secreta,numeros_de_chutes_errados, numeros_de_chutes_feitos);
 	}
 
 	cout << "FIM DE JOGO!" << endl;
