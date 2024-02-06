@@ -29,11 +29,15 @@ static array<char,30> chutes_feitos;
 
 int main() {
 
-	imprime_cabecalho();
+	
 
 	palavra_secreta = JogoForca::sorteia_palavra();
 
 	while (JogoForca::nao_acertou(palavra_secreta, chutou) && numeros_de_chutes_errados < tentativas) {
+		
+		system("cls");
+
+		imprime_cabecalho();
 		
 		JogoForca::imprime_palavra(palavra_secreta, chutou);
 		JogoForca::imprime_erros(chutes_errados);
@@ -43,7 +47,7 @@ int main() {
 
 		JogoForca::chuta(chutou, chutes_errados, chutes_feitos, palavra_secreta,numeros_de_chutes_errados, numeros_de_chutes_feitos);
 	}
-
+	system("cls");
 	cout << "************************************" << endl;
 	cout << "FIM DE JOGO!" << endl;
 	cout << "A palavra secreta era: " << palavra_secreta << endl;
