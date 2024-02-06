@@ -18,8 +18,8 @@
 
 using namespace std;
 
-static int numeros_de_chutes_errados;
-static int numeros_de_chutes_feitos;
+static int numeros_de_chutes_errados = 0;
+static int numeros_de_chutes_feitos = 0;
 static int tentativas = 5;
 static string palavra_secreta;
 static map<char, bool> chutou;
@@ -33,19 +33,22 @@ int main() {
 
 	palavra_secreta = JogoForca::sorteia_palavra();
 
-	while (JogoForca::nao_acertou(palavra_secreta, chutou) && chutes_errados.size() == tentativas) {
-
-		JogoForca::imprime_erros(chutes_errados);
-
+	while (JogoForca::nao_acertou(palavra_secreta, chutou) && numeros_de_chutes_errados < tentativas) {
+		
 		JogoForca::imprime_palavra(palavra_secreta, chutou);
-		JogoForca::imprime_tentativas(chutes_errados, tentativas);
+		JogoForca::imprime_erros(chutes_errados);
+		
+		JogoForca::imprime_tentativas(numeros_de_chutes_errados, tentativas);
 
 
 		JogoForca::chuta(chutou, chutes_errados, chutes_feitos, palavra_secreta,numeros_de_chutes_errados, numeros_de_chutes_feitos);
 	}
 
+	cout << "************************************" << endl;
 	cout << "FIM DE JOGO!" << endl;
 	cout << "A palavra secreta era: " << palavra_secreta << endl;
+	cout << "************************************" << endl;
+
 
 	if (JogoForca::nao_acertou(palavra_secreta, chutou)){
 		cout << "Voce perdeu! Tente novamente!" << endl;

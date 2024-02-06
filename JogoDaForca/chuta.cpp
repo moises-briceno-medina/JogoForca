@@ -14,16 +14,27 @@ void JogoForca:: chuta(std::map<char, bool>& chutou, std::array<char,5>& chutes_
 	
 	if (JogoForca::letra_ja_chutada(chute, chutes_feitos))
 	{
-		std::cout << "Voce ja chutou essa letra antes." << std::endl;
+		std::cout << std::endl;
+		std::cout << "***********************************" << std::endl;
+		std::cout << "* Voce ja chutou essa letra antes *" << std::endl;
+		std::cout << "***********************************" << std::endl;
+
 	}
 	else
 	{
 		if (JogoForca::letra_existe(chute,palavra_secreta)) {
-			std::cout << "voce acertou! seu chute esta na palavra" << std::endl;
+			std::cout << std::endl;
+			std::cout << "*******************************************" << std::endl;
+			std::cout << "* Voce acertou! seu chute esta na palavra *" << std::endl;
+			std::cout << "*******************************************" << std::endl;
+
 		}
 		else
 		{
-			std::cout << "voce errou! seu chute nao esta na palavra" << std::endl;
+			std::cout << std::endl;
+			std::cout << "*********************************************" << std::endl;
+			std::cout << "* Voce errou! seu chute nao esta na palavra *" << std::endl;
+			std::cout << "*********************************************" << std::endl;
 			numeros_de_chutes_errados += 1;
 			chutes_errados[numeros_de_chutes_errados - 1] = chute;
 		}
